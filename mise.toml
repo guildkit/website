@@ -1,0 +1,38 @@
+[tools]
+node = "24"
+
+[tasks]
+[tasks.dev]
+run = "astro dev"
+
+[tasks.build]
+run = "astro build"
+env = { NODE_ENV = "production" }
+
+[tasks.lint]
+run = [
+  "tsc --noEmit",
+  "eslint"
+]
+
+[tasks.fix]
+run = "eslint --fix"
+
+[tasks.clean]
+run = "git clean -dX --exclude=\"!.env\" --force"
+
+[tasks.refresh]
+depends = [ "clean" ]
+run = "rm --force ./pnpm-lock.yaml && corepack enable && corepack up && pnpm install"
+
+[hooks]
+postinstall = "corepack enable && pnpm install --frozen-lockfile"
+
+[env]
+_.file = ".env"
+_.path = "./node_modules/.bin"
+
+[settings]
+# Required for hooks as of 2025.10
+# https://mise.jdx.dev/hooks.html
+experimental = true
