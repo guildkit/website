@@ -9,14 +9,6 @@
   ],
   "private": true,
   "type": "module",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "lint": "tsc --noEmit && eslint",
-    "fix": "eslint --fix",
-    "clean": "git clean -dX --exclude=\"!.env\" --force",
-    "refresh": "pnpm run clean && rm --force ./pnpm-lock.yaml && corepack up && pnpm install"
-  },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.7",
     "accessible-astro-components": "^4.1.2"
