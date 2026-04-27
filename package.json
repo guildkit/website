@@ -21,7 +21,7 @@
     "@phanect/configs": "latest",
     "@phanect/lint": "latest",
     "@phanect/lint-astro": "latest",
-    "@types/node": "^24.0.3",
+    "@types/node": "^25.6.0",
     "astro": "^6.1.9",
     "astro-compress": "^2.3.8",
     "astro-eslint-parser": "^1.2.2",
