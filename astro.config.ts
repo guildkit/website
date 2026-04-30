@@ -35,6 +35,7 @@ export default defineConfig({
       alias: {
         "@components": fileURLToPath(new URL("./src/components", import.meta.url)),
         "@layouts": fileURLToPath(new URL("./src/layouts", import.meta.url)),
+        "@libs": fileURLToPath(new URL("./src/libs", import.meta.url)),
         "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
         "@content": fileURLToPath(new URL("./src/content", import.meta.url)),
         "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
