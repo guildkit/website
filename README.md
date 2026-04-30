@@ -26,4 +26,4 @@ Other supported dev commands:
 
 Copyright &copy; Jumpei Ogawa all rights reserved
 
-This website is based on [accessible-astro-starter](https://github.com/incluud/accessible-astro-starter) licensed under [MIT](./docs/legal/LICENSE-accessible-astro-starter.txt).
+This website is based on [accessible-astro-starter](https://github.com/incluud/accessible-astro-starter) licensed under [MIT](./legal/licenses/accessible-astro-starter.txt).
