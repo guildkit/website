@@ -64,7 +64,7 @@ import Logo from "./Logo.astro";
         const currentIndex = currentMenuItem ? menuItems.findIndex((item) => item === currentMenuItem) : -1
 
         const key = event.key
-        let targetItem: Element | null = null
+        let targetItem: Element | undefined
 
         if (key === 'ArrowRight') {
           if (currentMenuItem && menuItems.indexOf(currentMenuItem as HTMLLIElement) === menuItems.length - 1) {
