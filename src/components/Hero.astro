@@ -7,15 +7,25 @@ import { defaultLocale } from "@libs/i18n/configs.ts";
 
 const lang = Astro.currentLocale ?? Astro.preferredLocale ?? defaultLocale;
 const t = useTranslations(lang);
+const sloganLines = [
+  t("hero.slogan1"),
+  t("hero.slogan2"),
+  t("hero.slogan3"),
+].filter((slogan) => !!slogan); // Remove empty string
 ---
 
 <section class="hero my-24">
   <div class="container">
     <div class="flex items-start gap-16 w-fit">
       <div class="flex flex-col items-center gap-8 md:items-start">
-        <h1 class="text-left text-nowrap text-6xl md:text-left lg:text-8xl">
-          Build your own<br />
-          <span class="text-gradient">Job Portal</span>
+        <h1 class="text-left text-6xl lg:text-8xl text-nowrap flex flex-col gap-y-4">
+          {
+            sloganLines.map((slogan, i) => (
+              <span class:list={i === 1 ? "text-gradient" : ""}>
+                {slogan}
+              </span>
+            ))
+          }
         </h1>
         <div class="flex flex-col items-center gap-3 min-[500px]:flex-row">
           <a class="button has-icon" href="https://github.com/guildkit/guildkit">

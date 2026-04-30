@@ -25,6 +25,18 @@ export const translations = {
     en: "Toggle dark mode",
     ja: "ダークモードを切り替える",
   },
+  "hero.slogan1": {
+    en: "Build your own",
+    ja: "ギルドキットで",
+  },
+  "hero.slogan2": {
+    en: "Job Portal",
+    ja: "転職サイト",
+  },
+  "hero.slogan3": {
+    en: "",
+    ja: "を作ろう",
+  },
   "hero.watch-github": {
     en: "Watch on GitHub",
     ja: "GitHub で watch",
