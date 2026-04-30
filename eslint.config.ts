@@ -23,6 +23,11 @@ const configs: Linter.Config[] = [
         tsconfigRootDir: import.meta.dirname,
       },
     },
+
+    rules: {
+      // Temporarily disable this rule until eslint-plugin-import supports ESLint v10.x
+      "import/order": "off",
+    },
   },
 ];
 
