@@ -12,6 +12,26 @@ import { defaultLocale } from "@libs/i18n/configs.ts";
 const currentYear = new Date().getFullYear();
 const locale = Astro.currentLocale ?? Astro.preferredLocale ?? defaultLocale;
 const t = useTranslations(locale);
+
+const footerLinks = [
+  {
+    section: "GuildKit",
+    items: [
+      {
+        text: t("footer.home"),
+        href: `/${ locale }/`,
+      },
+      {
+        text: "GitHub",
+        href: "https://github.com/guildkit/guildkit",
+      },
+      {
+        text: t("footer.demo"),
+        href: "https://demo.guildkit.net",
+      },
+    ],
+  },
+] as const;
 ---
 
 <footer>
@@ -20,38 +40,24 @@ const t = useTranslations(locale);
   <section class="py-20">
     <h2 class="sr-only">Footer</h2>
     <div class="container flex justify-between gap-8">
-      <div class="flex flex-col gap-4">
-        <h3 class="text-2xl font-bold">GuildKit</h3>
-        <ul class="flex flex-col gap-2">
-          <li><a href={`/${ lang }/`}>{t("footer.home")}</a></li>
-          <li><a href="https://github.com/guildkit/guildkit">GitHub</a></li>
-          <li><a href="https://demo.guildkit.net">{t("footer.demo")}</a></li>
-        </ul>
-      </div>
-
-      <!--
-      <div class="flex flex-col gap-4">
-        <h3 class="text-2xl font-bold">Developer tools</h3>
-        <ul class="flex flex-col gap-2">
-          <li>
-            <ExternalLink href="https://www.w3.org/WAI/ARIA/apg/">ARIA Authoring Practices</ExternalLink>
-          </li>
-          <li>
-            <ExternalLink href="https://web.dev/articles/focus">Focus Management</ExternalLink>
-          </li>
-          <li>
-            <ExternalLink href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML">Semantic HTML Guide
-            </ExternalLink
-            >
-          </li>
-          <li>
-            <ExternalLink href="https://www.tpgi.com/screen-reader-user-survey-results/">Screen Reader Survey
-            </ExternalLink
-            >
-          </li>
-        </ul>
-      </div>
-      -->
+      {footerLinks.map(({ section, items }) => (
+        <div class="flex flex-col gap-4">
+          <h3 class="text-2xl font-bold">{section}</h3>
+          <ul class="flex flex-col gap-2">
+            {items.map(({ text, href }) => (
+              <li>
+                {
+                  (href.startsWith("/") || href.startsWith(".")) ? (
+                    <a href={href}>{text}</a>
+                  ) : (
+                    <ExternalLink href={href}>{text}</ExternalLink>
+                  )
+                }
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
 
       <div class="flex flex-col gap-4">
         <Logo loading="lazy" />
