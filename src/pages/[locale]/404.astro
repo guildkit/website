@@ -1,5 +1,10 @@
 ---
 import DefaultLayout from "@layouts/DefaultLayout.astro";
+import { locales } from "@libs/i18n/configs.ts";
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale }}));
+}
 ---
 
 <DefaultLayout title="404">

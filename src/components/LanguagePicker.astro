@@ -1,0 +1,29 @@
+---
+import { localeNames } from "@libs/i18n/configs.ts";
+
+/**
+ * LanguagePicker Component
+ * @description A component that displays language selection links
+ */
+---
+
+<div class="language-picker">
+  <ul class="list-none flex gap-3">
+    {
+      Object.entries(localeNames).map(([ locale, langLabel ]) => (
+        <li>
+          <a
+            href={`/${ locale }/`}
+            aria-current={Astro.currentLocale === locale ? "page" : undefined}
+            class:list={[
+              "underline decoration-1 text-sm transition-opacity duration-200 hover:opacity-70",
+              { "font-bold decoration-2": Astro.currentLocale === locale },
+            ]}
+          >
+            {langLabel}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

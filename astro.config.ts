@@ -4,12 +4,21 @@ import compress from "astro-compress";
 import icon from "astro-icon";
 import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
+import { defaultLocale, locales } from "./src/libs/i18n/configs.ts";
 
 export default defineConfig({
   compressHTML: true,
   site: "https://guildkit.net",
 
   trailingSlash: "always",
+
+  i18n: {
+    locales,
+    defaultLocale,
+    routing: {
+      prefixDefaultLocale: true,
+    },
+  },
 
   integrations: [
     mdx(),
