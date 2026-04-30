@@ -4,6 +4,7 @@
   "name": "guildkit-website",
   "compatibility_date": "2025-09-25",
   "compatibility_flags": [ "nodejs_compat" ],
+  "workers_dev": false,
   "placement": {
     "mode": "smart"
   },
@@ -12,18 +13,8 @@
     "directory": "./dist"
   },
 
-  // Runtime environment variables
-  "env": {
-    "production": {
-      "vars": {
-        "NODE_ENV": "production",
-        "SERVER_ENV": "production"
-      },
-    },
-    "staging": {
-      "vars": {
-        "SERVER_ENV": "staging"
-      }
-    }
+  "vars": {
+    "SKIP_DEPENDENCY_INSTALL": true,
+    "NODE_VERSION": 24
   }
 }
