@@ -12,6 +12,7 @@ env = { NODE_ENV = "production" }
 [tasks.lint]
 run = [
   "tsc --noEmit",
+  "astro check",
   "eslint"
 ]
 
