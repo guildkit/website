@@ -26,6 +26,12 @@ run = "git clean -dX --exclude=\"!.env\" --force"
 depends = [ "clean" ]
 run = "rm --force ./pnpm-lock.yaml && corepack enable && corepack up && pnpm install"
 
+[tasks.deploy]
+run = "wrangler deploy"
+
+[tasks.deploy-preview]
+run = "wrangler versions upload"
+
 [hooks]
 postinstall = "corepack enable && pnpm install --frozen-lockfile"
 
