@@ -58,6 +58,7 @@ This project does not use npm scripts. Instead, use `mise` tasks:
 - 2 space indentation (configured in .editorconfig)
 - Use ExternalLink component for external URLs
 - Responsive design implemented via SCSS breakpoints
+- Add file extensions (e.g., ".ts") when you `import` the local files
 
 ## Important Files
 
