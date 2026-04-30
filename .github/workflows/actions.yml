@@ -67,6 +67,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Add comment for deployment URL
+        if: github.ref != 'refs/heads/main'
         run: "gh pr comment ${{ github.event.number }} --edit-last --create-if-none --body 'Deployed to staging:\n${{ steps.deployment.outputs.pages-deployment-alias-url && steps.deployment.outputs.pages-deployment-alias-url || steps.deployment.outputs.deployment-url }}'"
         env:
           GH_TOKEN: ${{ github.token }}
