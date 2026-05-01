@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+
+  --space-5xs: var(--space-5xs);
+  --space-4xs: var(--space-4xs);
+  --space-3xs: var(--space-3xs);
+  --space-2xs: var(--space-2xs);
+  --space-xs: var(--space-xs);
+  --space-s: var(--space-s);
+  --space-m: var(--space-m);
+  --space-l: var(--space-l);
+  --space-xl: var(--space-xl);
+  --space-2xl: var(--space-2xl);
+  --space-3xl: var(--space-3xl);
+  --space-4xl: var(--space-4xl);
+  --space-5xl: var(--space-5xl);
+
+  --radius-xs: var(--radius-xs);
+  --radius-s: var(--radius-s);
+  --radius-m: var(--radius-m);
+  --radius-l: var(--radius-l);
+  --radius-h: var(--radius-h);
+
+  --animation-boop: boop 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+@keyframes boop {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@layer components {
+  .button {
+    @apply inline-flex relative justify-center items-center cursor-pointer;
+    border: 3px solid light-dark(var(--color-primary-200), var(--color-primary-100));
+    border-radius: var(--radius-s);
+    background-color: light-dark(var(--color-primary-200), var(--color-primary-100));
+    padding: var(--space-xs) var(--space-s);
+    inline-size: fit-content;
+    color: var(--color-neutral-900);
+    font-weight: 700;
+    transition: all var(--animation-speed-fast) var(--cubic-bezier);
+    transition-duration: var(--animation-speed-fast);
+    transition-timing-function: var(--cubic-bezier);
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: transparent;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 4px;
+
+    &:where(:hover, :focus-visible) {
+      border-color: light-dark(var(--color-primary-300), var(--color-primary-300));
+      background-color: light-dark(var(--color-primary-300), var(--color-primary-300));
+      text-decoration-color: currentColor;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 2px;
+    }
+
+    &.color-secondary {
+      border-color: light-dark(var(--color-secondary-100), var(--color-secondary-100));
+      background-color: light-dark(var(--color-secondary-100), var(--color-secondary-100));
+
+      &:where(:hover, :focus-visible) {
+        border-color: light-dark(var(--color-secondary-300), var(--color-secondary-300));
+        background-color: light-dark(var(--color-secondary-300), var(--color-secondary-300));
+      }
+    }
+
+    &.has-icon {
+      @apply flex items-center;
+      gap: var(--space-2xs);
+
+      [data-icon] {
+        inline-size: 30px;
+        block-size: auto;
+      }
+
+      &:where(:hover, :focus-visible) {
+        [data-icon] {
+          animation: var(--animation-boop);
+        }
+      }
+    }
+  }
+}
