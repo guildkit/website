@@ -54,9 +54,12 @@
 }
 
 @layer components {
+  .link {
+    @apply underline text-blue-400;
+  }
+
   .button {
-    @apply inline-flex relative justify-center items-center cursor-pointer;
-    border: 3px solid light-dark(var(--color-primary-200), var(--color-primary-100));
+    @apply inline-flex relative justify-center items-center cursor-pointer border-0;
     border-radius: var(--radius-s);
     background-color: light-dark(var(--color-primary-200), var(--color-primary-100));
     padding: var(--space-xs) var(--space-s);
@@ -105,5 +108,9 @@
         }
       }
     }
+  }
+
+  .button-secondary {
+    @apply bg-secondary-300 text-black;
   }
 }

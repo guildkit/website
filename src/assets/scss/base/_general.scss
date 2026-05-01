@@ -19,25 +19,8 @@ body {
   color: var(--foreground-color);
 }
 
-a {
-  transition: color var(--animation-speed-fast) var(--cubic-bezier);
-  color: var(--link-color);
-
-  &:where(:hover, :focus-visible) {
-    color: var(--link-hover-color);
-  }
-}
-
 main a,
 footer a {
-  @include text-decoration(var(--link-color), var(--link-hover-color));
-
-  color: var(--link-color);
-
-  &:where(:hover, :focus-visible) {
-    color: var(--link-hover-color);
-  }
-
   &.external-link {
     display: inline-flex;
     align-items: center;
