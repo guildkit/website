@@ -42,6 +42,15 @@ const sloganLines = [
           </a>
           -->
         </div>
+        <div class="flex flex-col items-left gap-5 rounded-2xl bg-purple-100 p-10 max-w-xl">
+          <p>
+            {t("hero.expo.text1")}<a href="https://service.it-trend.jp/service/it-trend-expo" class="link">{t("hero.expo.linktext")}</a>{t("hero.expo.text2")}
+          </p>
+          <a class="button button-secondary has-icon" href="https://it-trend-expo.example.com">
+            <Icon name="lucide:ticket" />
+            {t("hero.expo.registration")}
+          </a>
+        </div>
       </div>
       <Image class="hidden lg:block drop-shadow-2xl" src={heroImage} alt="" decoding="async" height={480} loading="eager" />
     </div>

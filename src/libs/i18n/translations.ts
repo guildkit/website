@@ -45,4 +45,22 @@ export const translations = {
     en: "Coming soon",
     ja: "近日公開予定",
   },
+
+  // Temporary until 2026.9.4 IT Trend EXPO
+  "hero.expo.text1": {
+    en: "Join us for an online exhibition ",
+    ja: "2026年9月1日 (火) 〜 9月4日 (金) に開催されるオンライン展示会「",
+  },
+  "hero.expo.linktext": {
+    en: "IT Trend EXPO",
+    ja: "IT トレンド EXPO",
+  },
+  "hero.expo.text2": {
+    en: " held at Sep 1-4, 2026. (in Japanese)",
+    ja: "」に出展します。",
+  },
+  "hero.expo.registration": {
+    en: "Join IT Trend EXPO",
+    ja: "参加登録",
+  },
 } as const satisfies Translations;
